@@ -79,7 +79,7 @@ GameManager.prototype.addRandomTile = function () {
       console.log("Cell at (" + cell[0] + "," + cell[1] + ")");
       //this.grid.insertTile(new Tile(cell, 2));
     }*/
-    
+    console.log("adding cells");
     this.grid.eachCell(function (x, y, tile) 
     {
       console.log("checking cell at (" + x + "," + y + ")")
