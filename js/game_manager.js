@@ -74,9 +74,12 @@ GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
     //var value = Math.random() < 0.9 ? 2 : 4;
     console.log("Adding tiles");
+    console.log("Length: " + this.grid.availableCells.length);
     for (var cell in this.grid.availableCells()){
       console.log(cell);
       var position = [cell.x, cell.y];
+      console.log(position[0]);
+      console.log(position[1]);
       this.grid.insertTile(new Tile(position, 2));
     }
   }
