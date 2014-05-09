@@ -76,11 +76,8 @@ GameManager.prototype.addRandomTile = function () {
     console.log("Adding tiles");
     console.log("Length: " + this.grid.availableCells().length);
     for (var cell in this.grid.availableCells()){
-      console.log(cell);
-      var position = [cell.x, cell.y];
-      console.log(position[0]);
-      console.log(position[1]);
-      this.grid.insertTile(new Tile(position, 2));
+      console.log("Cell at (" + cell[0] + "," + cell[1] + ")");
+      this.grid.insertTile(new Tile(cell, 2));
     }
   }
 };
