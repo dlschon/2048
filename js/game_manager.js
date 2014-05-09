@@ -4,8 +4,8 @@ function GameManager(size, InputManager, Actuator, StorageManager) {
   this.storageManager = new StorageManager;
   this.actuator       = new Actuator;
 
-  this.startTiles     = 1;
-  console.log("this thing is actually working");
+  this.startTiles     = 16;
+
   this.inputManager.on("move", this.move.bind(this));
   this.inputManager.on("restart", this.restart.bind(this));
   this.inputManager.on("keepPlaying", this.keepPlaying.bind(this));
@@ -28,11 +28,7 @@ GameManager.prototype.keepPlaying = function () {
 
 // Return true if the game is lost, or has won and the user hasn't kept playing
 GameManager.prototype.isGameTerminated = function () {
-  if (this.over || (this.won && !this.keepPlaying)) {
-    return true;
-  } else {
-    return false;
-  }
+  return this.over || (this.won && !this.keepPlaying);
 };
 
 // Set up the game
@@ -71,34 +67,11 @@ GameManager.prototype.addStartTiles = function () {
 
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
-  console.log("test");
   if (this.grid.cellsAvailable()) {
-    //var value = Math.random() < 0.9 ? 2 : 4;
-    /*console.log("Adding tiles");
-    console.log("Length: " + this.grid.availableCells().length);
-    for (var cell in this.grid.availableCells()){
-      console.log("Cell at (" + cell[0] + "," + cell[1] + ")");
-      //this.grid.insertTile(new Tile(cell, 2));
-    }*/
-    /*console.log("adding cells");
-    this.grid.eachCell(function (x, y, tile) 
-    {
-      console.log("checking cell at (" + x + "," + y + ")")
-      if (!tile) 
-      {
-        console.log("adding cell at (" + x + "," + y + ")");
-        var position = [x, y];
-        this.grid.insertTile(new Tile(position, 2));
-      } 
-    });*/
-    
-    if (this.grid.cellsAvailable()) {
     var value = Math.random() < 0.9 ? 2 : 4;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
-  }
-  
   }
 };
 
