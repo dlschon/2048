@@ -73,12 +73,22 @@ GameManager.prototype.addStartTiles = function () {
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
     //var value = Math.random() < 0.9 ? 2 : 4;
-    console.log("Adding tiles");
+    /*console.log("Adding tiles");
     console.log("Length: " + this.grid.availableCells().length);
     for (var cell in this.grid.availableCells()){
       console.log("Cell at (" + cell[0] + "," + cell[1] + ")");
       //this.grid.insertTile(new Tile(cell, 2));
-    }
+    }*/
+    
+    this.grid.eachCell(function (x, y, tile) 
+    {
+      if (!tile) 
+      {
+        var position = [x, y];
+        this.grid.insertTile(new Tile(position, 2));
+      } 
+    });
+  
   }
 };
 
