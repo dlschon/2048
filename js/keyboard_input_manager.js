@@ -134,6 +134,7 @@ KeyboardInputManager.prototype.listen = function () {
 
 KeyboardInputManager.prototype.restart = function (event) {
   event.preventDefault();
+  alert("restart");
   this.emit("restart");
 };
 
