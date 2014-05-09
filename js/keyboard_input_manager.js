@@ -61,6 +61,7 @@ KeyboardInputManager.prototype.listen = function () {
     if (!modifiers) {
       if (mapped !== undefined) {
         event.preventDefault();
+        alert("move");
         self.emit("move", mapped);
       }
     }
@@ -134,7 +135,7 @@ KeyboardInputManager.prototype.listen = function () {
 
 KeyboardInputManager.prototype.restart = function (event) {
   event.preventDefault();
-  alert("restart");
+  
   this.emit("restart");
 };
 
