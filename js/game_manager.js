@@ -79,7 +79,7 @@ GameManager.prototype.addRandomTile = function () {
       console.log("Cell at (" + cell[0] + "," + cell[1] + ")");
       //this.grid.insertTile(new Tile(cell, 2));
     }*/
-    console.log("adding cells");
+    /*console.log("adding cells");
     this.grid.eachCell(function (x, y, tile) 
     {
       console.log("checking cell at (" + x + "," + y + ")")
@@ -89,7 +89,14 @@ GameManager.prototype.addRandomTile = function () {
         var position = [x, y];
         this.grid.insertTile(new Tile(position, 2));
       } 
-    });
+    });*/
+    
+    if (this.grid.cellsAvailable()) {
+    var value = Math.random() < 0.9 ? 2 : 4;
+    var tile = new Tile(this.grid.randomAvailableCell(), value);
+
+    this.grid.insertTile(tile);
+  }
   
   }
 };
