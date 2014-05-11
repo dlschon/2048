@@ -253,7 +253,7 @@ hr {
     vertical-align: middle;
     margin-left: 10px; }
   .game-message.game-won {
-    background: rgba(237, 194, 46, 0.5);
+    background: rgba(26, 57, 130, 0.5);
     color: #f9f6f2; }
     .game-message.game-won a.keep-playing-button {
       display: inline-block; }
@@ -293,7 +293,7 @@ hr {
   margin-right: 15px;
   float: left;
   border-radius: 3px;
-  background: rgba(238, 228, 218, 0.35); }
+  background: rgba(221, 218, 238, 0.35); }
   .grid-cell:last-child {
     margin-right: 0; }
 
@@ -679,7 +679,7 @@ hr {
         margin-right: 5px; }
     .game-message a {
       display: inline-block;
-      background: #8f7a66;
+      background: #1A3982;
       border-radius: 3px;
       padding: 0 20px;
       text-decoration: none;
@@ -695,7 +695,7 @@ hr {
       vertical-align: middle;
       margin-left: 10px; }
     .game-message.game-won {
-      background: rgba(237, 194, 46, 0.5);
+      background: rgba(26, 57, 130, 0.5);
       color: #f9f6f2; }
       .game-message.game-won a.keep-playing-button {
         display: inline-block; }
