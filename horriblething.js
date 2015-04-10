@@ -126,12 +126,6 @@ var Star = function() {
 	}
 }
 
-function createStars() {
-	for(var i = n_stars;i--;) {
-		stars.push(new Star);
-	}
-}
-
 function main() {
 	fw1.update();
 	fw2.update();
@@ -152,9 +146,9 @@ function init() {
 	fw3 = new Firework;
 	fw4 = new Firework;
 	
-	fw2.life = -LIFE*delay/2;
-	fw3.life = -LIFE*delay/3;
-	fw4.life = -LIFE*delay/4;
+	fw2.life = -LIFE*delay;
+	fw3.life = -LIFE*delay;
+	fw4.life = -LIFE*delay;
 	main();
 }
 
