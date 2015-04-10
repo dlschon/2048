@@ -4,11 +4,8 @@ $(function(){
 // play with them
 var c = document.querySelector('canvas'),
 	ctx = c.getContext('2d'),
-
-	n_stars = 0, //num of stars
-	stars = [], //array to store generated stars
-	twinkleFactor = .2, //how much stars 'twinkle'
-	maxStarRadius = 3,
+	width = c.width = window.innerWidth,
+	height = c.height = window.innerHeight,
 
 	fw1, fw2, //firework objects
 	minStrength = 1.5, //lowest firework power
