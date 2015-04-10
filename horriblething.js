@@ -111,28 +111,12 @@ var Firework = function() {
 	}
 };
 
-var Star = function() {
-	this.x = Math.random()*width;
-	this.y = Math.random()*height;
-	this.r = Math.random()*maxStarRadius;
-	this.b = ~~(Math.random()*100) /100;
-	this.draw = function() {
-		this.b += twinkleFactor*(Math.random()-.5);
-		ctx.fillStyle = 'rgba(255,255,255,'+this.b+')';
-		ctx.beginPath();
-		ctx.arc(~~this.x,~~this.y,this.r,0,Math.PI*2);
-		ctx.fill();
-		ctx.closePath();
-	}
-}
-
 function main() {
 	fw1.update();
 	fw2.update();
 
-	if (fw1.life >= LIFE*delay) fw2 = new Firework;
-	if (fw2.life >= LIFE*delay) fw1 = new Firework;
-
+	if (fw1.life == LIFE*delay) fw2 = new Firework;
+	if (fw2.life == LIFE*delay) fw1 = new Firework;
 
 	window.requestAnimationFrame(main);
 }
@@ -140,7 +124,6 @@ function main() {
 function init() {
 	fw1 = new Firework;
 	fw2 = new Firework;
-	
 	fw2.life = -LIFE*delay;
 	main();
 }
