@@ -138,10 +138,10 @@ function main() {
 	fw3.update();
 	fw4.update();
 
-	if (fw1.life >= LIFE*delay/4) fw2 = new Firework;
-	if (fw2.life >= LIFE*delay/4) fw3 = new Firework;
-	if (fw3.life >= LIFE*delay/4) fw4 = new Firework;
-	if (fw4.life >= LIFE*delay/4) fw1 = new Firework;
+	if (fw1.life >= LIFE*delay) fw2 = new Firework;
+	if (fw2.life >= LIFE*delay) fw3 = new Firework;
+	if (fw3.life >= LIFE*delay) fw4 = new Firework;
+	if (fw4.life >= LIFE*delay) fw1 = new Firework;
 
 	window.requestAnimationFrame(main);
 }
