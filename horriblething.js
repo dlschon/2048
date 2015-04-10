@@ -135,16 +135,20 @@ function createStars() {
 function main() {
 	fw1.update();
 	fw2.update();
-	fw2.update();
+	fw3.update();
+	fw4.update();
 
-	if (fw1.life == LIFE*delay) fw2 = new Firework;
-	if (fw2.life == LIFE*delay) fw1 = new Firework;
+	if (fw1.life >= LIFE*delay/4) fw2 = new Firework;
+	if (fw2.life >= LIFE*delay/4) fw3 = new Firework;
+	if (fw3.life >= LIFE*delay/4) fw4 = new Firework;
+	if (fw4.life >= LIFE*delay/4) fw1 = new Firework;
 
 	window.requestAnimationFrame(main);
 }
 
 function init() {
 	fw1 = new Firework;
+	fw2 = new Firework;
 	fw2 = new Firework;
 	fw2.life = -LIFE*delay;
 	main();
