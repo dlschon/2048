@@ -7,7 +7,7 @@ var c = document.querySelector('canvas'),
 	width = c.width = window.innerWidth,
 	height = c.height = window.innerHeight,
 
-	fw1, fw2, //firework objects
+	fw1, fw2, fw3, fw4, //firework objects
 	minStrength = 1.5, //lowest firework power
 	maxStrength = 4, //highest firework power
 	minTrails = 7, //min particles/trails
@@ -134,6 +134,7 @@ function createStars() {
 
 function main() {
 	fw1.update();
+	fw2.update();
 	fw2.update();
 
 	if (fw1.life == LIFE*delay) fw2 = new Firework;
