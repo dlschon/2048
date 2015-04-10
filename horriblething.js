@@ -4,10 +4,8 @@ $(function(){
 // play with them
 var c = document.querySelector('canvas'),
 	ctx = c.getContext('2d'),
-	width = c.width = window.innerWidth,
-	height = c.height = window.innerHeight,
 
-	n_stars = 100, //num of stars
+	n_stars = 0, //num of stars
 	stars = [], //array to store generated stars
 	twinkleFactor = .2, //how much stars 'twinkle'
 	maxStarRadius = 3,
@@ -138,13 +136,6 @@ function createStars() {
 }
 
 function main() {
-	ctx.fillStyle = '#000';
-	ctx.fillRect(0,0,width,height);
-
-	for(var i = n_stars;i--;) {
-		stars[i].draw();
-	}
-
 	fw1.update();
 	fw2.update();
 
@@ -158,7 +149,6 @@ function init() {
 	fw1 = new Firework;
 	fw2 = new Firework;
 	fw2.life = -LIFE*delay;
-	createStars();
 	main();
 }
 
