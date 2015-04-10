@@ -149,8 +149,12 @@ function main() {
 function init() {
 	fw1 = new Firework;
 	fw2 = new Firework;
-	fw2 = new Firework;
-	fw2.life = -LIFE*delay;
+	fw3 = new Firework;
+	fw4 = new Firework;
+	
+	fw2.life = -LIFE*delay/2;
+	fw3.life = -LIFE*delay/3;
+	fw4.life = -LIFE*delay/4;
 	main();
 }
 
